@@ -17,14 +17,13 @@ jobs:
 
     steps:
       - name: Check out repository
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - name: Test
       - run: echo "Finished setting up Node environment"
       - run: echo "🖥️ The workflow is now ready to test the code on the runner."
       - run: npm ci

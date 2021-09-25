@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon ./src/server.js",
+    "test": "node ./src/test.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/bri4nle/github-actions-demo/issues"
   },
-  "homepage": "https://github.com/bri4nle/github-actions-demo#readme"
+  "homepage": "https://github.com/bri4nle/github-actions-demo#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.13"
+  }
 }

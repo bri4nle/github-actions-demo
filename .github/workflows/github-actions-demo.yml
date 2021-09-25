@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - run: "Finished setting up Node environment"
+      - run: echo "Finished setting up Node environment"
       - run: echo "🖥️ The workflow is now ready to test the code on the runner."
       - run: npm ci
       - run: npm test

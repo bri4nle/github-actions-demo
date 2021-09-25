@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const port = 3000;
+const greet = require("./controller").greet;
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -13,8 +14,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/greet", (req, res) => {
-  const greet = `<h1>Greeting ${req.body.name}!</h1>`;
-  res.send(greet);
+  res.send(`<h2>${greet(req.body.name)}</h2>`);
 });
 
 app.listen(port, () => {

@@ -22,6 +22,6 @@ test("Load from file", () => {
 });
 
 // Fail test case
-test("Fail test case", () => {
-  test(2).toBe(3);
-});
+// test("Fail test case", () => {
+//   test(2).toBe(3);
+// });

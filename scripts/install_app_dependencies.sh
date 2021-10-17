@@ -7,4 +7,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 cd /home/ec2-user/github-actions-demo
-npm install
+echo "$HOME"

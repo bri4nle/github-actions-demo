@@ -4,6 +4,7 @@
 # exec 1>/home/ec2-user/out.log 2>&1
 # source /home/ec2-user/.bashrc
 echo "starting script"
+echo $NVM_DIR
 pwd
 whoami
 ls

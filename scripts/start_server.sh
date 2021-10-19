@@ -5,7 +5,8 @@ exec 1>/home/ec2-user/out1.log 2>&1
 # source /home/ec2-user/.bashrc
 echo "In start server. Activating .bashrc"
 export NVM_DIR="/home/ec2-user/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvmecho "starting script"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+echo "starting script"
 
 cd /home/ec2-user/github-actions-demo
 pm2 start src/serverSide/server.js

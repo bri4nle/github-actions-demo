@@ -20,8 +20,3 @@ test("Load from file", () => {
   let res03 = aq03.findQuote("smiles");
   expect(res03.search("indicate where smiles have been")).toBeGreaterThan(-1);
 });
-
-// Fail test case
-// test("Fail test case", () => {
-//   test(2).toBe(3);
-// });

@@ -10,7 +10,7 @@
 // Load my class that holds the set of quotations
 const AllQuotes = require("./AllQuotes");
 const QUOTE_DB_FILE =
-  process.env.HOME === "/home/ec2-user"
+  process.env.HOME === "/root"
     ? "/home/ec2-user/github-actions-demo/src/data/quotes_all.csv"
     : "src/data/quotes_all.csv";
 

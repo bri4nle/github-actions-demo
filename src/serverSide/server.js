@@ -14,9 +14,6 @@ const QUOTE_DB_FILE =
     ? "/home/ec2-user/github-actions-demo/src/data/quotes_all.csv"
     : "src/data/quotes_all.csv";
 
-console.log(process.cwd());
-console.log(process.env.NODE_ENV);
-
 // Load and configure the Express web server
 const express = require("express");
 const app = express();

@@ -9,9 +9,13 @@
 
 // Load my class that holds the set of quotations
 const AllQuotes = require("./AllQuotes");
-const QUOTE_DB_FILE = `${process.cwd()}/src/data/quotes_all.csv`;
+const QUOTE_DB_FILE =
+  process.env.NODE_ENV === "production"
+    ? "/home/ec2-user/github-actions-demo/src/data/quotes_all.csv"
+    : "src/data/quotes_all.csv";
 
 console.log(process.cwd());
+console.log(process.env.NODE_ENV);
 
 // Load and configure the Express web server
 const express = require("express");

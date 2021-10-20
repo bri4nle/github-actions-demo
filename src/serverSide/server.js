@@ -9,7 +9,7 @@
 
 // Load my class that holds the set of quotations
 const AllQuotes = require("./AllQuotes");
-const QUOTE_DB_FILE = `${process.cwd()}src/data/quotes_all.csv`;
+const QUOTE_DB_FILE = `${process.cwd()}/src/data/quotes_all.csv`;
 
 console.log(process.cwd());
 

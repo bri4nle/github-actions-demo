@@ -77,3 +77,5 @@ function isSafe(s) {
   pattern = /[^a-zA-Z0-9 ]/;
   return !pattern.test(s);
 }
+
+exports.app = app;

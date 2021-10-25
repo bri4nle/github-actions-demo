@@ -74,8 +74,8 @@ jobs:
         id: deploy
         run: |
           aws deploy create-deployment \
-            --application-name QuoteServer \
-            --deployment-group-name QuoteServerGroup \
+            --application-name QuoteServerProd \
+            --deployment-group-name QuoteServerProdGroupName \
             --deployment-config-name CodeDeployDefault.OneAtATime \
             --github-location repository=${{ github.repository }},commitId=${{ github.sha }}
       # Step 6

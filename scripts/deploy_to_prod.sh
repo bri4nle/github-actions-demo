@@ -20,11 +20,12 @@ echo "Copying zipped app to S3"
 aws s3 cp deployment.tar.gz "s3://quote-server-bucket/deployment.tar.gz"
 # Start CodeDeploy
 echo "Deploying"
+aws configure set default.region us-east-1
 aws deploy create-deployment \
   --application-name QuoteServer \
   --deployment-group-name QuoteServerGroupProd \
   --deployment-config-name CodeDeployDefault.OneAtATime \
-  --file-exists-behavior OVERWRITE
+  --file-exists-behavior OVERWRITE \
   --s3-location bucket=quote-server-bucket,key=deployment.tar.gz,bundleType=zip
 
 # aws code-deploy ... Run this after integration test finish

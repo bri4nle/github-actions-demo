@@ -2,9 +2,7 @@
 # Modify start_server.sh for production
 echo "Modifying start_script.sh"
 cd /home/ec2-user/github-actions-demo/scripts
-echo "cd /home/ec2-user
-rm -rf github-actions-demo
-gunzip deployment.tar.gz
+echo "gunzip deployment.tar.gz
 tar -xf deployment.tar
 export NVM_DIR=\"/home/ec2-user/.nvm\"
 [ -s \"$NVM_DIR/nvm.sh\" ] && \. \"$NVM_DIR/nvm.sh\"

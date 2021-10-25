@@ -27,6 +27,6 @@ aws deploy create-deployment \
   --deployment-group-name QuoteServerGroupProd \
   --deployment-config-name CodeDeployDefault.OneAtATime \
   --file-exists-behavior OVERWRITE \
-  --s3-location bucket=quote-server-bucket,key=deployment.tar.gz,bundleType=zip
+  --s3-location bucket=quote-server-bucket,key=deployment.tar.gz,bundleType=tgz
 
 # aws code-deploy ... Run this after integration test finish

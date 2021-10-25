@@ -26,7 +26,7 @@ app.get("/search", (req, res) =>
   res.send(getResponseHTML(req.query.search_string))
 );
 
-app.listen(port, () =>
+const server = app.listen(port, () =>
   console.log(`quote server app listening at http://localhost:${port}`)
 );
 
@@ -78,4 +78,8 @@ function isSafe(s) {
   return !pattern.test(s);
 }
 
-exports.app = app;
+function closeConnection() {
+  server.close();
+}
+
+module.exports = app;

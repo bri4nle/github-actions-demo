@@ -26,9 +26,9 @@ app.get("/search", (req, res) =>
   res.send(getResponseHTML(req.query.search_string))
 );
 
-const server = app.listen(port, () =>
-  console.log(`quote server app listening at http://localhost:${port}`)
-);
+// app.listen(port, () =>
+//   console.log(`quote server app listening at http://localhost:${port}`)
+// );
 
 // Function to process an input message and emit the response
 // Input is sString - the search string to locate a quotation

@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node ./src/serverSide/server.js",
-    "test": "npx jest --detectOpenHandles"
+    "unit_test": "npx jest unit.test.js",
+    "system_test": "npx jest integration.test.js"
   },
   "author": "",
   "license": "ISC",

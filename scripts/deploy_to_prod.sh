@@ -16,6 +16,7 @@ cd /home/ec2-user
 tar -cvf deployment.tar github-actions-demo
 gzip
 # Copy app to S3 bucket
+$ aws configure set default.region us-east-1
 echo "Copying zipped app to S3"
 aws s3 cp deployment.tar.gz "s3://quote-server-bucket/deployment.tar.gz"
 # Start CodeDeploy

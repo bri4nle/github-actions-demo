@@ -2,7 +2,9 @@
 # Modify start_server.sh for production
 echo "Modifying start_script.sh"
 cd /home/ec2-user/github-actions-demo/scripts
-echo "gunzip deployment.tar.gz
+echo "cd /home/ec2-user
+rm -rf github-actions-demo
+gunzip deployment.tar.gz
 tar -xf deployment.tar
 export NVM_DIR=\"/home/ec2-user/.nvm\"
 [ -s \"$NVM_DIR/nvm.sh\" ] && \. \"$NVM_DIR/nvm.sh\"
@@ -14,7 +16,7 @@ cd /home/ec2-user/github-actions-demo
 echo "Zipping the app"
 cd /home/ec2-user
 tar -cvf deployment.tar github-actions-demo
-gzip
+gzip deployment.tar
 # Copy app to S3 bucket
 $ aws configure set default.region us-east-1
 echo "Copying zipped app to S3"

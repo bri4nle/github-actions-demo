@@ -77,6 +77,7 @@ jobs:
             --application-name QuoteServer \
             --deployment-group-name QuoteServerGroup \
             --deployment-config-name CodeDeployDefault.OneAtATime \
+            --target-intances i-0dbb2b2697112edc5
             --github-location repository=${{ github.repository }},commitId=${{ github.sha }}
       # Step 6
       - name: Remove Github Actions IP from security group

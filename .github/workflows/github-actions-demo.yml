@@ -92,7 +92,7 @@ jobs:
 
   continuous-deployment-prod:
     runs-on: ubuntu-latest
-    needs: [continuous-integration-test]
+    needs: [continuous-deployment-test]
     if: github.ref == 'refs/heads/main'
     steps:
       # Step 1

@@ -56,7 +56,7 @@ describe("GET /*", () => {
       .expect(200)
       .then((response) => {
         const text = "No matching quote was found";
-        expect(response.text.includes(text)).toBe(true);
+        expect(response.text.includes(text)).toBe(false);
         done();
       });
   });

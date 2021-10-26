@@ -77,6 +77,7 @@ function getResponseHTML(sString) {
 
 // a too simple check for unsafe search strings
 // We accept only alphanumeric and spaces.
+
 // function isSafe(s) {
 //   pattern = /[^a-zA-Z0-9 ]/;
 //   return !pattern.test(s);

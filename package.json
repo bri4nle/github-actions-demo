@@ -4,7 +4,7 @@
   "description": "Server side express server for the quoteServer project. See Evernote 20200709 - Software Development for the Continuous SE course",
   "main": "server.js",
   "scripts": {
-    "start": "node ./src/serverSide/server.js",
+    "start": "node ./src/serverSide/index.js",
     "unit_test": "npx jest unit.test.js",
     "system_test": "npx jest integration.test.js"
   },

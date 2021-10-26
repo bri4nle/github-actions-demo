@@ -22,9 +22,11 @@ const port = 3000;
 // Set the paths that Express will recognize and assign a function
 // to handle GET messages for each set of paths
 app.get("/", (req, res) => res.send(getResponseHTML(null)));
-app.get("/search", (req, res) =>
-  res.send(getResponseHTML(req.query.search_string))
-);
+app.get("/search", (req, res) => {
+  console.log("in search route");
+  console.log(req.query);
+  res.status(200).send(getResponseHTML(req.query.search_string));
+});
 
 // app.listen(port, () =>
 //   console.log(`quote server app listening at http://localhost:${port}`)
@@ -46,6 +48,7 @@ function getResponseHTML(sString) {
     searcher.loadFromFile(QUOTE_DB_FILE);
     aQuote.theText = searcher.findQuote(sString);
   }
+  console.log("here1");
   // template is a shell for the HTML response message
   // The quote gets inserted and then the template is returned
   let template = `
@@ -68,6 +71,7 @@ function getResponseHTML(sString) {
             </p>
         </body>
         </html>`;
+  console.log("herre");
   return template;
 } // end getResponseHTML()
 
@@ -76,10 +80,6 @@ function getResponseHTML(sString) {
 function isSafe(s) {
   pattern = /[^a-zA-Z0-9 ]/;
   return !pattern.test(s);
-}
-
-function closeConnection() {
-  server.close();
 }
 
 module.exports = app;

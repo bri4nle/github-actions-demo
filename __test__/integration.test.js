@@ -9,9 +9,11 @@ const regeneratorRuntime = require("regenerator-runtime");
 describe("GET /search", () => {
   test("response with template code", (done) => {
     request(app)
-      .get("/search?search_string=money")
+      .get("/search")
+      .query({ search_string: "money" })
       .expect(500)
       .then((response) => {
+        console.log(response);
         done();
       });
   });

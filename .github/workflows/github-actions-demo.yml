@@ -93,17 +93,6 @@ jobs:
           curl --connect-timeout 2 http://54.147.243.89:3000/search?search_string=money
           curl --connect-timeout 2 http://54.147.243.89:3000/search?search_string=sdfdf
 
-  # system-test:
-  #   runs-on: ubuntu-latest
-  #   needs: [continuous-deployment-test]
-
-  #   steps:
-  #     - name: Run system test
-  #       run: |
-  #         curl --connect-timeout 2 http://54.147.243.89:3000
-  #         curl --connect-timeout 2 http://54.147.243.89:3000/search?search_string=money
-  #         curl --connect-timeout 2 http://54.147.243.89:3000/search?search_string=sdfdf
-
   continuous-deployment-prod:
     runs-on: ubuntu-latest
     needs: [continuous-deployment-test]

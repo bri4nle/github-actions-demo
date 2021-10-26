@@ -3,4 +3,4 @@ export NVM_DIR="/home/ec2-user/.nvm"
 echo "starting script"
 
 cd /home/ec2-user/github-actions-demo
-pm2 stop src/serverSide/server.js
+pm2 stop src/serverSide/index.js

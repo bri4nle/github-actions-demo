@@ -17,29 +17,29 @@ const QUOTE_DB_FILE =
 // Load and configure the Express web server
 const express = require("express");
 const app = express();
-const port = 3000;
+
+const isSafe = (req, res, next) => {
+  const pattern = /[^a-zA-Z0-9 ]/;
+
+  if (pattern.test(req.query.search_string)) {
+    req.query.search_string = null;
+  }
+  next();
+};
 
 // Set the paths that Express will recognize and assign a function
 // to handle GET messages for each set of paths
 app.get("/", (req, res) => res.send(getResponseHTML(null)));
-app.get("/search", (req, res) => {
-  console.log("in search route");
-  console.log(req.query);
-  res.status(200).send(getResponseHTML(req.query.search_string));
+app.get("/search", isSafe, (req, res) => {
+  res.send(getResponseHTML(req.query.search_string));
 });
-
-// app.listen(port, () =>
-//   console.log(`quote server app listening at http://localhost:${port}`)
-// );
 
 // Function to process an input message and emit the response
 // Input is sString - the search string to locate a quotation
 // If null, just display "Please do a search"
 function getResponseHTML(sString) {
   console.log("Searched for: " + sString); // DEBUG
-  if (!isSafe(sString)) {
-    sString = null;
-  }
+
   // aQuote is a javascript object with the quote to return
   let aQuote = { theText: "Please do a search" };
   if (null !== sString && sString.length > 0) {
@@ -48,7 +48,7 @@ function getResponseHTML(sString) {
     searcher.loadFromFile(QUOTE_DB_FILE);
     aQuote.theText = searcher.findQuote(sString);
   }
-  console.log("here1");
+
   // template is a shell for the HTML response message
   // The quote gets inserted and then the template is returned
   let template = `
@@ -71,15 +71,15 @@ function getResponseHTML(sString) {
             </p>
         </body>
         </html>`;
-  console.log("herre");
+
   return template;
 } // end getResponseHTML()
 
 // a too simple check for unsafe search strings
 // We accept only alphanumeric and spaces.
-function isSafe(s) {
-  pattern = /[^a-zA-Z0-9 ]/;
-  return !pattern.test(s);
-}
+// function isSafe(s) {
+//   pattern = /[^a-zA-Z0-9 ]/;
+//   return !pattern.test(s);
+// }
 
 module.exports = app;

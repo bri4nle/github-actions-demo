@@ -9,10 +9,7 @@
 
 // Load my class that holds the set of quotations
 const AllQuotes = require("./AllQuotes");
-const QUOTE_DB_FILE =
-  process.env.HOME === "/root"
-    ? "/home/ec2-user/github-actions-demo/src/data/quotes_all.csv"
-    : "src/data/quotes_all.csv";
+const QUOTE_DB_FILE = "src/data/quotes_all.csv";
 
 // Load and configure the Express web server
 const express = require("express");
@@ -74,13 +71,5 @@ function getResponseHTML(sString) {
 
   return template;
 } // end getResponseHTML()
-
-// a too simple check for unsafe search strings
-// We accept only alphanumeric and spaces.
-
-// function isSafe(s) {
-//   pattern = /[^a-zA-Z0-9 ]/;
-//   return !pattern.test(s);
-// }
 
 module.exports = app;

@@ -18,5 +18,5 @@ aq03.loadFromFile("src/data/3_quotes.csv");
 
 test("Load from file", () => {
   let res03 = aq03.findQuote("smiles");
-  expect(res03.search("indicate where smiles have been")).toBeGreaterThan(1);
+  expect(res03.search("indicate where smiles have been")).toBeLessThan(-1);
 });
